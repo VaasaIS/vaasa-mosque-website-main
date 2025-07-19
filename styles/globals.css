@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* primary color  #025A3B */
+/* secondary rgb(202, 233, 222, 0.5)
+/* ascent #AADBC9 */
+/* text color #444053 */
+
+@layer components {
+  .btn-primary {
+    @apply rounded-sm border border-yellow-300 bg-gradient-to-b from-yellow-200 to-yellow-400 p-2 text-xs focus:outline-none focus:ring-2 focus:ring-yellow-500 active:from-yellow-500 md:text-sm;
+
+    @apply from-primary-v-200 to-primary-v-400 focus:ring-primary-v-500 active:from-primary-v-500 rounded-sm border bg-primary bg-gradient-to-b p-2 text-xs focus:outline-none focus:ring-2 md:text-sm;
+  }
+
+  .btn {
+    @apply cursor-pointer rounded-full bg-primary px-5 py-2 font-bold uppercase text-white shadow;
+  }
+  .btn:hover {
+    @apply bg-secondary-variant-100 text-text-color;
+  }
+
+  .btn-small {
+    @apply cursor-pointer rounded-full bg-primary px-3 py-1 text-[0.85rem] font-medium uppercase text-white md:text-base;
+  }
+
+  .btn-small:hover {
+    @apply bg-secondary-variant-100 text-text-color;
+  }
+  .hamburger {
+    @apply relative cursor-pointer text-primary transition duration-200 ease-in-out;
+  }
+  .open {
+    @apply translate-y-4 hover:translate-y-12;
+  }
+  .input-phone {
+    @apply w-full rounded-md border-2 border-gray-300 px-3 py-1 font-light text-text-color placeholder-text-color-variant-100 shadow outline-red-500 ring-secondary focus-within:rounded-md focus-within:border-primary focus-within:ring;
+  }
+}
+
+@layer utilities {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.carousel .control-dots .dot {
+  background-color: #aadbc9;
+}
+
+.form-control {
+  color: #444053;
+  width: 100% !important;
+  border: 0 !important;
+  height: auto !important;
+}
+
+.flag-dropdown {
+  border: 0 !important;
+  margin-top: 2.3px !important;
+  height: 85% !important;
+}

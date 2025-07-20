@@ -1,4 +1,4 @@
-import { Article, WeeklyReminder } from '../typings'
+import type { Article, WeeklyReminder } from '../typings'
 import { sanityClient, urlFor } from '../lib/sanityClient'
 
 import Donate from '../components/Donate'

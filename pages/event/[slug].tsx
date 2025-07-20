@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next'
 
 import LayoutSlug from '../../components/LayoutSlug'
 
-import { Event } from '../../typings'
+import type { Event } from '../../typings'
 import PortableText from 'react-portable-text'
 import { sanityClient } from '../../lib/sanityClient'
 import {

@@ -9,7 +9,7 @@ import Layout from '../components/Layout'
 import { CalendarIcon } from '@heroicons/react/outline'
 
 import { sanityClient, urlFor } from '../lib/sanityClient'
-import { Event, InfoNews } from '../typings'
+import type { Event, InfoNews } from '../typings'
 import {
   ChevronDownIcon,
   ChevronUpIcon,

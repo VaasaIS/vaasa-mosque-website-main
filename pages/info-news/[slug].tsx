@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import LayoutSlug from '../../components/LayoutSlug'
 
-import { InfoNews } from '../../typings'
+import type { InfoNews } from '../../typings'
 import PortableText from 'react-portable-text'
 import { sanityClient } from '../../lib/sanityClient'
 

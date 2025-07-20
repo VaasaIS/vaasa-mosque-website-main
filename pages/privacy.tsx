@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next'
 
 import Layout from '../components/Layout'
 
-import { Privacy } from '../typings'
+import type { Privacy } from '../typings'
 import PortableText from 'react-portable-text'
 import { sanityClient } from '../lib/sanityClient'
 

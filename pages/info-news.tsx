@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import { CalendarIcon } from '@heroicons/react/outline'
 
 import { sanityClient, urlFor } from '../lib/sanityClient'
-import { InfoNews } from '../typings'
+import type { InfoNews } from '../typings'
 
 import DefaultImage from '../assets/default-image.png'
 

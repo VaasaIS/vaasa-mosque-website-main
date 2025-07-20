@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next'
 
 import LayoutSlug from '../../components/LayoutSlug'
 
-import { Article } from '../../typings'
+import type { Article } from '../../typings'
 import PortableText from 'react-portable-text'
 import { sanityClient, urlFor } from '../../lib/sanityClient'
 import { useForm, SubmitHandler } from 'react-hook-form'

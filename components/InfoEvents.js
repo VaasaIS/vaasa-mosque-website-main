@@ -44,7 +44,6 @@ const InfoEvents = () => {
             className="btn-small"
           >
             See all
-            See all
           </Link>
         </div>
         <div className="relative mb-5">
@@ -106,7 +105,6 @@ const InfoEvents = () => {
           as="/articles/#all-audios-texts-videos"
           className="btn-small mt-4 self-start md:mt-8"
         >
-          See all updates
           See all updates
         </Link>
       </div>

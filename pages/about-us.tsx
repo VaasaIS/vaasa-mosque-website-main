@@ -14,6 +14,7 @@ const AboutUs = () => {
             src={AboutUsImg}
             objectFit="cover"
             className="rounded-none object-fill md:rounded-lg"
+            alt="About Us image"
           />
         </div>
         <div className="mb-10 w-full p-0 text-justify md:mb-0 md:w-1/2 md:text-left">
@@ -81,7 +82,7 @@ const AboutUs = () => {
           <div className="xs:h-auto xs:square h-32 bg-ascent md:col-start-2"></div>
           <div className="xs:h-auto xs:square h-32 bg-secondary"></div>
           <div className="xs:h-auto xs:square h-32 overflow-hidden bg-ascent">
-            <Image src={AboutUsImg} objectFit="cover" />
+            <Image src={AboutUsImg} objectFit="cover" alt="About Us gallery image" />
           </div>
           <div className="xs:h-auto xs:square h-32 bg-ascent"></div>
           <div className="xs:h-auto xs:square h-32 bg-secondary"></div>

@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 
 import { CalendarIcon } from '@heroicons/react/outline'
 
-import { Event } from '../typings'
+import type { Event } from '../typings'
 import { sanityClient, urlFor } from '../lib/sanityClient'
 
 import DefaultImage from '../assets/default-image.png'

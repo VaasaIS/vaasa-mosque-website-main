@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import Layout from '../components/Layout'
 
 import { sanityClient, urlFor } from '../lib/sanityClient'
-import { Article } from '../typings'
+import type { Article } from '../typings'
 
 import { CalendarIcon } from '@heroicons/react/outline'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'

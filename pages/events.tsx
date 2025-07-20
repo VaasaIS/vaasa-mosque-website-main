@@ -51,6 +51,7 @@ const Events = ({ events }: Props) => {
                 className="w-full rounded-lg object-fill"
                 height={250}
                 width={500}
+                alt={event.title || 'Event Image'}
               />
             </div>
             <div className="w-full px-0 md:w-9/12 md:px-5">

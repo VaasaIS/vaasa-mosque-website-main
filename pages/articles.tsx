@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -26,7 +26,7 @@ const Articles = ({ articles }: Props) => {
   const [openAudiosVideos, setOpenAudiosVideos] = useState(false)
   const router = useRouter()
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (router.query.keyword === 'openAudiosVideos') {
       setOpenArticles(!openArticles)
       setOpenAudiosVideos(!openAudiosVideos)
@@ -81,6 +81,7 @@ const Articles = ({ articles }: Props) => {
                   className="w-full rounded-lg object-fill"
                   height={250}
                   width={500}
+                  alt={article.title || 'Article Image'}
                 />
               </div>
               <div className="w-full px-0 md:w-9/12 md:px-5">

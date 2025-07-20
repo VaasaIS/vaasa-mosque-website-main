@@ -38,18 +38,16 @@ const InfoEvents = () => {
           <Link
             href={{
               pathname: '/info-events/',
-
               query: { keyword: 'openLatestEvents' },
             }}
             as="/info-events/#latest-events"
+            className="btn-small"
           >
-            <a className="btn-small" href="/info-events">
-              See all
-            </a>
+            See all
           </Link>
         </div>
         <div className="relative mb-5">
-          <Image src={InfoEventImage} alt="info image" objectFit="cover" />
+          <Image src={InfoEventImage} alt="info image" className="object-cover" />
           <a
             className="btn absolute bottom-12 right-6 bg-white text-sm text-primary md:right-16 md:bottom-20 md:text-base lg:bottom-36"
             href="/events"
@@ -60,14 +58,14 @@ const InfoEvents = () => {
 
         <div className="flex space-x-6">
           <div className="w-1/2">
-            <Image src={Event1} alt="info image" objectFit="cover" />
+            <Image src={Event1} alt="info image" className="object-cover" />
             <p className="text-left text-sm text-text-color lg:text-lg">
               Vaasa Islamic Society (VIS) provides a supportive space for
               worship, learning, and connection among Muslims in the region.
             </p>
           </div>
           <div className="w-1/2">
-            <Image src={Event2} alt="info image" objectFit="cover" />
+            <Image src={Event2} alt="info image" className="object-cover" />
             <p className="text-left text-sm text-text-color lg:text-lg">
               Vaasa Islamic Society (VIS) actively promotes peaceful coexistence
               among individuals of different backgrounds and faiths.
@@ -102,12 +100,12 @@ const InfoEvents = () => {
         <Link
           href={{
             pathname: '/articles/',
-
             query: { keyword: 'openAudiosVideos' },
           }}
           as="/articles/#all-audios-texts-videos"
+          className="btn-small mt-4 self-start md:mt-8"
         >
-          <a className="btn-small mt-4 self-start md:mt-8">See all updates</a>
+          See all updates
         </Link>
       </div>
     </section>

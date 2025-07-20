@@ -33,10 +33,8 @@ const Success = () => {
             </a>
           </h3>
         </div>
-        <Link href="/donate">
-          <button type="button" className="btn mt-10">
-            Donate Again
-          </button>
+        <Link href="/donate" className="btn mt-10">
+          Donate Again
         </Link>
       </section>
     </Layout>

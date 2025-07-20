@@ -24,7 +24,7 @@ const Header = () => {
           alt="vaasa islamic society logo"
           width={260}
           height={50}
-          objectFit="contain"
+          className="object-contain"
         />
       </a>
       <a href="/" className="lg:hidden">
@@ -33,29 +33,29 @@ const Header = () => {
           alt="vaasa islamic society logo"
           width={220}
           height={35}
-          objectFit="contain"
+          className="object-contain"
         />
       </a>
       <nav className="justtify-center flex items-center">
         <ul className="hidden items-center justify-center space-x-10 text-lg text-primary md:flex">
           <li className="md:hidden lg:inline-flex">
             <Link href="/">
-              <a>Home</a>
+              Home
             </Link>
           </li>
           <li className="md:hidden lg:inline-flex">
             <Link href="/info-events">
-              <a>Info &amp; Events</a>
+              Info &amp; Events
             </Link>
           </li>
           <li className="md:hidden lg:inline-flex">
             <Link href="/about-us">
-              <a>About</a>
+              About
             </Link>
           </li>
           <li className="md:hidden lg:inline-flex">
             <Link href="/contact-us">
-              <a>Contact</a>
+              Contact
             </Link>
           </li>
           {/* <li>
@@ -89,22 +89,22 @@ const Header = () => {
           >
             <li>
               <Link href="/">
-                <a>Home</a>
+                Home
               </Link>
             </li>
             <li>
               <Link href="/about-us">
-                <a>About</a>
+                About
               </Link>
             </li>
             <li>
               <Link href="/info-events">
-                <a>Info & Events</a>
+                Info & Events
               </Link>
             </li>
             <li>
               <Link href="/contact-us">
-                <a>Contact</a>
+                Contact
               </Link>
             </li>
             {/* <li>

@@ -28,10 +28,8 @@ const Cancelled = () => {
             </a>
           </h3>
         </div>
-        <Link href="/donate">
-          <button type="button" className="btn mt-10">
-            Donate
-          </button>
+        <Link href="/donate" className="btn mt-10">
+          Donate
         </Link>
       </section>
     </Layout>

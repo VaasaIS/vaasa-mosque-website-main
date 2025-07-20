@@ -84,11 +84,9 @@ function Footer() {
               <div className="w-2/4 text-primary">
                 <p>Location 2</p>
                 <ul className="mt-1 text-sm font-semibold">
-                  <li>
-                    Tiilitehtaankatu 25,
-                    <li>65100 Vaasa, </li>
-                    <li>Finland</li>
-                  </li>
+                  <li>Tiilitehtaankatu 25,</li>
+                  <li>65100 Vaasa,</li>
+                  <li>Finland</li>
                 </ul>
               </div>
             </div>
@@ -146,7 +144,7 @@ function Footer() {
                 className="btn mr-2 mb-3 bg-[#D0FAEA] py-1 text-sm font-medium normal-case text-primary"
               >
                 <Link href="/articles">
-                  <a>{tag}</a>
+                  {tag}
                 </Link>
               </li>
             ))}
@@ -166,7 +164,7 @@ function Footer() {
                 className="btn mr-2 mb-3 bg-[#D0FAEA] py-1 text-sm font-medium normal-case text-primary"
               >
                 <Link href="/articles">
-                  <a>{tag}</a>
+                  {tag}
                 </Link>
               </li>
             ))}

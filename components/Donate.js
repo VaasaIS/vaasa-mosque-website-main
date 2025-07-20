@@ -142,7 +142,7 @@ const Donate = () => {
           <Image
             src={DonateImg}
             alt="a man holding donation bucket"
-            objectFit="cover"
+            className="object-cover"
           />
         </div>
         <p className="mb-5 text-left text-sm text-text-color md:mb-12 md:text-lg">
@@ -299,7 +299,7 @@ const Donate = () => {
         <Image
           src={DonateImg}
           alt="a man holding donation bucket"
-          objectFit="cover"
+          className="object-cover"
         />
       </div>
     </section>

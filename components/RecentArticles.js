@@ -31,10 +31,9 @@ function RecentArticles({ articles, urlFor }) {
             </div>
             <Image
               src={article.mainImage && urlFor(article.mainImage).url()}
-              objectFit="cover"
               height={300}
               width={500}
-              className="rounded-t-lg"
+              className="rounded-t-lg object-cover"
             />
             <div className="flex flex-col flex-1 p-5">
               <header>
@@ -46,22 +45,20 @@ function RecentArticles({ articles, urlFor }) {
                 {article.description && article.description.slice(0, 69)}...
               </p>
               <div className="flex justify-start mt-10">
-                <Link href={`/article/${article.slug.current}`}>
-                  <a className="inline-flex items-center btn-small">
-                    Read More
-                    <svg
-                      className="w-4 h-4 ml-2 -mr-1"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                  </a>
+                <Link href={`/article/${article.slug.current}`} className="inline-flex items-center btn-small">
+                  Read More
+                  <svg
+                    className="w-4 h-4 ml-2 -mr-1"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
                 </Link>
               </div>
             </div>
@@ -70,8 +67,8 @@ function RecentArticles({ articles, urlFor }) {
       </div>
 
       <div className="flex justify-center mt-20">
-        <Link href="/articles">
-          <a className="btn">Read All Articles</a>
+        <Link href="/articles" className="btn">
+          Read All Articles
         </Link>
       </div>
     </section>

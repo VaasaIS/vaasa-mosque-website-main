@@ -93,22 +93,20 @@ const Articles = ({ articles }: Props) => {
                   {article.description}
                 </p>
                 <div className="mt-4 flex justify-start md:mt-10">
-                  <Link href={`/article/${article.slug.current}`}>
-                    <a className="btn-small inline-flex items-center">
-                      Read More
-                      <svg
-                        className="ml-2 -mr-1 h-4 w-4"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                        ></path>
-                      </svg>
-                    </a>
+                  <Link href={`/article/${article.slug.current}`} className="btn-small inline-flex items-center">
+                    Read More
+                    <svg
+                      className="ml-2 -mr-1 h-4 w-4"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      ></path>
+                    </svg>
                   </Link>
                 </div>
               </div>

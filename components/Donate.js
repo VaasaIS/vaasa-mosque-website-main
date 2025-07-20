@@ -6,7 +6,6 @@ import Select from 'react-select'
 import { v4 as uuidv4 } from 'uuid'
 import toast from 'react-hot-toast'
 import getStripe from '../lib/getStripe'
-import { PayPalButton } from 'react-paypal-button-v2'
 
 import DonateImg from '../assets/donate-img.png'
 import StripeDonateBtn from '../assets/stripe-donate-btn.svg'
@@ -142,7 +141,7 @@ const Donate = () => {
           <Image
             src={DonateImg}
             alt="a man holding donation bucket"
-            className="object-cover"
+            style={{ objectFit: 'cover' }}
           />
         </div>
         <p className="mb-5 text-left text-sm text-text-color md:mb-12 md:text-lg">
@@ -263,35 +262,14 @@ const Donate = () => {
             >
               <Image
                 src={StripeDonateBtn}
-                objectFit="cover"
+                style={{ objectFit: 'cover' }}
                 className="rounded-md"
               />
             </button>
           </div>
         )}
         {scriptLoaded && channel === 'paypal-card' && (
-          <div className="mt-24 mb-0 ">
-            <PayPalButton
-              style={{ shape: 'pill' }}
-              amount={selectedAmount}
-              onClick={() => {
-                toast.loading('Paypal handling payment...')
-              }}
-              onSuccess={(details, data) => {
-                console.log(details)
-                toast.success('Donation Successful!')
-                router.push('/success')
-              }}
-              onError={(error) => {
-                // consoel.log(error)
-                toast.error('Something went wrong!')
-              }}
-              onCancel={() => {
-                toast.error('Donation Cancelled!')
-                router.push('/cancelled')
-              }}
-            />
-          </div>
+          <></>
         )}
       </div>
 
@@ -299,7 +277,7 @@ const Donate = () => {
         <Image
           src={DonateImg}
           alt="a man holding donation bucket"
-          className="object-cover"
+          style={{ objectFit: 'cover' }}
         />
       </div>
     </section>

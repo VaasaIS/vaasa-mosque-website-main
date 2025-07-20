@@ -87,6 +87,9 @@ function Footer() {
                   <li>Tiilitehtaankatu 25,</li>
                   <li>65100 Vaasa,</li>
                   <li>Finland</li>
+                  <li>Tiilitehtaankatu 25,</li>
+                  <li>65100 Vaasa,</li>
+                  <li>Finland</li>
                 </ul>
               </div>
             </div>
@@ -143,9 +146,7 @@ function Footer() {
                 key={_id}
                 className="btn mr-2 mb-3 bg-[#D0FAEA] py-1 text-sm font-medium normal-case text-primary"
               >
-                <Link href="/articles">
-                  {tag}
-                </Link>
+                <a href="/articles">{tag}</a>
               </li>
             ))}
           </ul>
@@ -163,9 +164,7 @@ function Footer() {
                 key={_id}
                 className="btn mr-2 mb-3 bg-[#D0FAEA] py-1 text-sm font-medium normal-case text-primary"
               >
-                <Link href="/articles">
-                  {tag}
-                </Link>
+                <a href="/articles">{tag}</a>
               </li>
             ))}
           </ul>

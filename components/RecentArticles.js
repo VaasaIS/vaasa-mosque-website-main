@@ -67,9 +67,7 @@ function RecentArticles({ articles, urlFor }) {
       </div>
 
       <div className="flex justify-center mt-20">
-        <Link href="/articles" className="btn">
-          Read All Articles
-        </Link>
+        <Link href="/articles" className="btn">Read All Articles</Link>
       </div>
     </section>
   )

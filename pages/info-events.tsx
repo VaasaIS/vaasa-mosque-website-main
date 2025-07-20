@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -27,7 +27,7 @@ const InfoEvents = ({ events, infoNews }: Props) => {
   const [openLatestEvents, setOpenLatestEvents] = useState(false)
   const router = useRouter()
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (router.query.keyword === 'openLatestEvents') {
       setOpenLatestNews(false)
       setOpenLatestEvents(true)
@@ -86,6 +86,7 @@ const InfoEvents = ({ events, infoNews }: Props) => {
                   className="w-full rounded-lg object-fill"
                   height={250}
                   width={500}
+                  alt={info.title || 'Info News Image'}
                 />
               </div>
               <div className="w-full px-0 md:w-9/12 md:px-5">
@@ -128,9 +129,7 @@ const InfoEvents = ({ events, infoNews }: Props) => {
           ))}
         {openLatestNews && (
           <div className="mt-20 flex justify-center">
-            <Link href="/info-news" className="btn">
-              Read All News
-            </Link>
+            <Link href="/info-news" className="btn">Read All News</Link>
           </div>
         )}
       </section>
@@ -180,6 +179,7 @@ const InfoEvents = ({ events, infoNews }: Props) => {
                   className="w-full rounded-lg object-fill"
                   height={250}
                   width={500}
+                  alt={event.title || 'Event Image'}
                 />
               </div>
               <div className="w-full px-0 md:w-9/12 md:px-5">
@@ -226,9 +226,7 @@ const InfoEvents = ({ events, infoNews }: Props) => {
           ))}
         {openLatestEvents && (
           <div className="mt-20 flex justify-center">
-            <Link href="/events" className="btn">
-              Checkout all events
-            </Link>
+            <Link href="/events" className="btn">Checkout all events</Link>
           </div>
         )}
       </section>

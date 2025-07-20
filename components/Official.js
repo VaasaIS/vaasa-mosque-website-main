@@ -7,6 +7,7 @@ const Official = ({ data }) => {
       <div className="flex w-1/3 md:w-full">
         <Image
           src={pic}
+          style={{ objectFit: 'cover' }}
           height={370}
           width={300}
           className="object-cover w-full"

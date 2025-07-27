@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { VideoCameraIcon, DocumentTextIcon, VolumeUpIcon } from '@heroicons/react/outline'
 import { Update } from '../typings'
 
@@ -33,7 +34,7 @@ const Updates = ({ updates }: UpdatesProps) => {
       </div>
 
       <ul className="mb-3">
-        {updates.map((update) => (
+        {updates.slice(0, 4).map((update) => (
           <li
             key={update._id}
             className="text-md flex cursor-pointer items-center justify-between py-1 text-text-color md:py-2 md:text-xl"
@@ -47,6 +48,17 @@ const Updates = ({ updates }: UpdatesProps) => {
           </li>
         ))}
       </ul>
+      
+      {updates.length > 4 && (
+        <div className="mt-4 text-center">
+          <Link 
+            href="/articles?keyword=openAudiosVideos" 
+            className="text-primary hover:text-primary-dark font-medium"
+          >
+            See all updates
+          </Link>
+        </div>
+      )}
     </section>
   )
 }

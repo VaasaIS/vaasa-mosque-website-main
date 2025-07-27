@@ -10,6 +10,7 @@ import subscribe from './documents/subscribe'
 import tag from './documents/tag'
 import infoNews from './documents/infoNews'
 import privacy from './documents/privacy'
+import update from './documents/update'
 
 import weeklyReminder from './documents/weeklyReminder'
 
@@ -26,5 +27,6 @@ export default [
   subscribe,
   tag,
   privacy,
+  update,
   weeklyReminder,
 ]

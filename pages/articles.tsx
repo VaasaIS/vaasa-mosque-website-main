@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import Layout from '../components/Layout'
 
 import { sanityClient, urlFor } from '../lib/sanityClient'
-import type { Article } from '../typings'
+import type { Article, Update } from '../typings'
 
 import { CalendarIcon } from '@heroicons/react/outline'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
@@ -19,9 +19,10 @@ import {
 
 interface Props {
   articles: [Article]
+  updates: Update[]
 }
 
-const Articles = ({ articles }: Props) => {
+const Articles = ({ articles, updates }: Props) => {
   const [openArticles, setOpenArticles] = useState(true)
   const [openAudiosVideos, setOpenAudiosVideos] = useState(false)
   const router = useRouter()
@@ -133,48 +134,34 @@ const Articles = ({ articles }: Props) => {
 
         {openAudiosVideos && (
           <ul className="mb-3">
-            <li className="text-md flex cursor-pointer items-center justify-between py-1 text-text-color md:py-2 md:text-xl">
-              Essense of life (English)
-              <span className="font-sm ml-2 flex items-center text-xs md:text-base">
-                <VideoCameraIcon className="mr-2 h-5" />
-                10:24
-              </span>
-            </li>
-            <li className="text-md flex cursor-pointer items-center justify-between py-1 text-text-color md:py-2 md:text-xl">
-              Essense of life (English)
-              <span className="font-sm ml-2 flex items-center text-xs md:text-base">
-                <DocumentTextIcon className="mr-2 h-5" />
-                10:24
-              </span>
-            </li>
-            <li className="text-md flex cursor-pointer items-center justify-between py-1 text-text-color md:py-2 md:text-xl">
-              Essense of life (English)
-              <span className="font-sm ml-2 flex items-center text-xs md:text-base">
-                <DocumentTextIcon className="mr-2 h-5" />
-                10:24
-              </span>
-            </li>
-            <li className="text-md flex cursor-pointer items-center justify-between py-2 text-text-color md:text-xl">
-              Essense of life (English)
-              <span className="font-sm ml-2 flex items-center text-xs md:text-base">
-                <VolumeUpIcon className="mr-2 h-5" />
-                10:24
-              </span>
-            </li>
-            <li className="text-md flex cursor-pointer items-center justify-between py-1 text-text-color md:py-2 md:text-xl">
-              Essense of life (English)
-              <span className="font-sm ml-2 flex items-center text-xs md:text-base">
-                <VideoCameraIcon className="mr-2 h-5" />
-                10:24
-              </span>
-            </li>
-            <li className="text-md flex cursor-pointer items-center justify-between py-1 text-text-color md:py-2 md:text-xl">
-              Essense of life (English)
-              <span className="font-sm ml-2 flex items-center text-xs md:text-base">
-                <DocumentTextIcon className="mr-2 h-5" />
-                10:24
-              </span>
-            </li>
+            {updates.map((update) => {
+              const getIcon = (type: string) => {
+                switch (type) {
+                  case 'video':
+                    return <VideoCameraIcon className="mr-2 h-5" />
+                  case 'audio':
+                    return <VolumeUpIcon className="mr-2 h-5" />
+                  case 'text':
+                    return <DocumentTextIcon className="mr-2 h-5" />
+                  default:
+                    return <DocumentTextIcon className="mr-2 h-5" />
+                }
+              }
+
+              return (
+                <li
+                  key={update._id}
+                  className="text-md flex cursor-pointer items-center justify-between py-1 text-text-color md:py-2 md:text-xl"
+                  onClick={() => window.open(update.url, '_blank')}
+                >
+                  {update.title}
+                  <span className="font-sm ml-2 flex items-center text-xs md:text-base">
+                    {getIcon(update.type)}
+                    {update.duration}
+                  </span>
+                </li>
+              )
+            })}
           </ul>
         )}
       </section>
@@ -195,11 +182,26 @@ export const getServerSideProps = async () => {
   mainImage,
 }`
 
+  const queryUpdates = `
+  *[_type=="update" && isActive == true] | order(order asc, publishedAt desc)[0...20]{
+    _id,
+    title,
+    type,
+    duration,
+    url,
+    description,
+    publishedAt,
+    isActive,
+    order,
+  }`
+
   const articles = await sanityClient.fetch(query)
+  const updates = await sanityClient.fetch(queryUpdates)
 
   return {
     props: {
       articles,
+      updates,
     },
   }
 }

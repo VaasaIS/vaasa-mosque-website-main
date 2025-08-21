@@ -50,6 +50,9 @@ const Header = () => {
           <li className="md:hidden lg:inline-flex">
             <Link href="/contact-us">Contact</Link>
           </li>
+          <li className="md:hidden lg:inline-flex">
+            <Link href="/newcomers">Newcomers</Link>
+          </li>
           {/* <li>
             <Link href="/donate">
               <a className="btn">Donate</a>
@@ -90,6 +93,9 @@ const Header = () => {
             </li>
             <li>
               <Link href="/contact-us">Contact</Link>
+            </li>
+            <li>
+              <Link href="/newcomers">Newcomers</Link>
             </li>
             {/* <li>
               <Link href="/donate">

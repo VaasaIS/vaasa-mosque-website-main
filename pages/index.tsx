@@ -3,6 +3,7 @@ import { sanityClient, urlFor } from '../lib/sanityClient'
 
 import Donate from '../components/Donate'
 import InfoEvents from '../components/InfoEvents'
+import Link from 'next/link'
 import Layout from '../components/Layout'
 import RecentArticles from '../components/RecentArticles'
 import Updates from '../components/Updates'
@@ -20,6 +21,11 @@ const Home = ({ articles, weeklyReminderImage, updates }: Props) => {
       pageTitle="Home | Vaasa Islamic Society"
       weeklyReminderImage={weeklyReminderImage}
     >
+      <div className="mx-auto mb-6 flex items-center justify-center">
+        <Link href="/newcomers" className="btn">
+          Newcomers Guide
+        </Link>
+      </div>
       <InfoEvents />
       <Updates updates={updates} />
       {/* <Donate /> */}

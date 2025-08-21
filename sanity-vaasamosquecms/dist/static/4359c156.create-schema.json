@@ -710,7 +710,7 @@
               },
               {
                 "flag": "min",
-                "constraint": "2025-08-20T07:56:03.352Z"
+                "constraint": "2025-08-20T08:29:50.592Z"
               }
             ],
             "level": "error"
@@ -1138,8 +1138,29 @@
   {
     "fields": [
       {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string",
+        "title": "Document Title"
+      },
+      {
+        "name": "description",
+        "type": "text"
+      },
+      {
         "options": {
-          "hotspot": true
+          "accept": ".pdf,.doc,.docx",
+          "storeOriginalFilename": true
         },
         "validation": [
           {
@@ -1152,15 +1173,70 @@
             "level": "error"
           }
         ],
-        "description": "Recommended image size is 800x600",
-        "name": "weeklyReminderImage",
-        "type": "image",
-        "title": "Weekly Reminder"
+        "name": "documentFile",
+        "type": "file"
+      },
+      {
+        "description": "Name or identifier of who uploaded the document",
+        "name": "uploadedBy",
+        "type": "string"
+      },
+      {
+        "options": {
+          "dateFormat": "DD.MM.YYYY",
+          "timeFormat": "HH:mm"
+        },
+        "readOnly": true,
+        "name": "uploadDate",
+        "type": "datetime"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Pending Review",
+              "value": "pending"
+            },
+            {
+              "title": "Under Review",
+              "value": "reviewing"
+            },
+            {
+              "title": "Processed",
+              "value": "processed"
+            },
+            {
+              "title": "Rejected",
+              "value": "rejected"
+            }
+          ]
+        },
+        "initialValue": "pending",
+        "name": "status",
+        "type": "string"
+      },
+      {
+        "description": "Internal notes for document processing",
+        "name": "notes",
+        "type": "text",
+        "title": "Admin Notes"
+      },
+      {
+        "description": "Size of the uploaded file",
+        "readOnly": true,
+        "name": "fileSize",
+        "type": "string"
+      },
+      {
+        "description": "MIME type of the uploaded file",
+        "readOnly": true,
+        "name": "fileType",
+        "type": "string"
       }
     ],
-    "name": "reminder",
+    "name": "dvvDocument",
     "type": "document",
-    "title": "Weekly Reminders"
+    "title": "DVV Documents"
   },
   {
     "fields": [
@@ -1423,5 +1499,32 @@
     ],
     "name": "membersList",
     "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Recommended image size is 800x600",
+        "name": "weeklyReminderImage",
+        "type": "image",
+        "title": "Weekly Reminder"
+      }
+    ],
+    "name": "reminder",
+    "type": "document",
+    "title": "Weekly Reminders"
   }
 ]

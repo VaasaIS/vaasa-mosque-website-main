@@ -11,6 +11,7 @@ import tag from './documents/tag'
 import infoNews from './documents/infoNews'
 import privacy from './documents/privacy'
 import update from './documents/update'
+import dvvDocument from './documents/dvvDocument'
 import membersList from './documents/membersList'
 
 import weeklyReminder from './documents/weeklyReminder'
@@ -29,6 +30,7 @@ export default [
   tag,
   privacy,
   update,
-  weeklyReminder,
+  dvvDocument,
   membersList,
+  weeklyReminder,
 ]

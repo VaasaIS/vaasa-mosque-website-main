@@ -89,3 +89,15 @@ export interface WeeklyReminder {
   _updatedAt: string
   publishedAt: string
 }
+
+export interface Update {
+  _id: string
+  title: string
+  type: 'video' | 'audio' | 'text'
+  duration: string
+  url: string
+  description?: string
+  publishedAt: string
+  isActive: boolean
+  order: number
+}

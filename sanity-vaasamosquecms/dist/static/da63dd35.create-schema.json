@@ -710,7 +710,7 @@
               },
               {
                 "flag": "min",
-                "constraint": "2025-07-26T09:27:19.751Z"
+                "constraint": "2025-08-20T07:56:03.352Z"
               }
             ],
             "level": "error"
@@ -1061,7 +1061,7 @@
             "level": "error"
           }
         ],
-        "description": "Duration in format MM:SS (e.g., 10:24)",
+        "description": "Duration in format MM:SS (e.g., 10:24) or just minutes (e.g., 10)",
         "name": "duration",
         "type": "string"
       },
@@ -1161,5 +1161,267 @@
     "name": "reminder",
     "type": "document",
     "title": "Weekly Reminders"
+  },
+  {
+    "fields": [
+      {
+        "readOnly": true,
+        "name": "id",
+        "type": "string",
+        "title": "Registration ID"
+      },
+      {
+        "options": {
+          "dateFormat": "DD.MM.YYYY",
+          "timeFormat": "HH:mm"
+        },
+        "readOnly": true,
+        "name": "date",
+        "type": "datetime",
+        "title": "Submission Date"
+      },
+      {
+        "readOnly": true,
+        "name": "fullName",
+        "type": "string"
+      },
+      {
+        "readOnly": true,
+        "name": "email",
+        "type": "string"
+      },
+      {
+        "readOnly": true,
+        "name": "phone",
+        "type": "string",
+        "title": "Phone Number"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Male",
+              "value": "Male"
+            },
+            {
+              "title": "Female",
+              "value": "Female"
+            }
+          ]
+        },
+        "readOnly": true,
+        "name": "gender",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Student",
+              "value": "student"
+            },
+            {
+              "title": "Employed",
+              "value": "employed"
+            },
+            {
+              "title": "Self-employed",
+              "value": "self_employed"
+            },
+            {
+              "title": "Unemployed",
+              "value": "unemployed"
+            },
+            {
+              "title": "Homemaker",
+              "value": "homemaker"
+            },
+            {
+              "title": "Retired",
+              "value": "retired"
+            },
+            {
+              "title": "Other",
+              "value": "other"
+            }
+          ]
+        },
+        "readOnly": true,
+        "name": "employmentStatus",
+        "type": "string"
+      },
+      {
+        "readOnly": true,
+        "name": "occupation",
+        "type": "string",
+        "title": "Occupation / Field of Study"
+      },
+      {
+        "readOnly": true,
+        "name": "organization",
+        "type": "string",
+        "title": "Workplace / University"
+      },
+      {
+        "readOnly": true,
+        "name": "nationality",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Under 18",
+              "value": "under_18"
+            },
+            {
+              "title": "18 - 24",
+              "value": "18_24"
+            },
+            {
+              "title": "25 - 34",
+              "value": "25_34"
+            },
+            {
+              "title": "35 - 44",
+              "value": "35_44"
+            },
+            {
+              "title": "45+",
+              "value": "45_plus"
+            }
+          ]
+        },
+        "readOnly": true,
+        "name": "ageGroup",
+        "type": "string"
+      },
+      {
+        "readOnly": true,
+        "name": "hasSpouse",
+        "type": "boolean",
+        "title": "Has Spouse in Vaasa"
+      },
+      {
+        "readOnly": true,
+        "name": "spouseFullName",
+        "type": "string"
+      },
+      {
+        "fields": [
+          {
+            "readOnly": true,
+            "name": "fullName",
+            "type": "string"
+          },
+          {
+            "options": {
+              "list": [
+                {
+                  "title": "Student",
+                  "value": "student"
+                },
+                {
+                  "title": "Employed",
+                  "value": "employed"
+                },
+                {
+                  "title": "Self-employed",
+                  "value": "self_employed"
+                },
+                {
+                  "title": "Unemployed",
+                  "value": "unemployed"
+                },
+                {
+                  "title": "Homemaker",
+                  "value": "homemaker"
+                },
+                {
+                  "title": "Retired",
+                  "value": "retired"
+                },
+                {
+                  "title": "Other",
+                  "value": "other"
+                }
+              ]
+            },
+            "readOnly": true,
+            "name": "employmentStatus",
+            "type": "string"
+          },
+          {
+            "readOnly": true,
+            "name": "occupation",
+            "type": "string",
+            "title": "Occupation / Field of Study"
+          },
+          {
+            "readOnly": true,
+            "name": "organization",
+            "type": "string",
+            "title": "Workplace / University"
+          }
+        ],
+        "readOnly": true,
+        "name": "spouse",
+        "type": "object"
+      },
+      {
+        "readOnly": true,
+        "name": "hasChildren",
+        "type": "boolean",
+        "title": "Has Children in Vaasa"
+      },
+      {
+        "description": "How many children live with you? Include their ages.",
+        "readOnly": true,
+        "name": "childrenDetails",
+        "type": "text"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "readOnly": true,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "readOnly": true,
+                "name": "age",
+                "type": "string"
+              },
+              {
+                "readOnly": true,
+                "name": "occupation",
+                "type": "string",
+                "title": "Occupation / School level"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "readOnly": true,
+        "name": "children",
+        "type": "array"
+      },
+      {
+        "readOnly": true,
+        "name": "gdprConsent",
+        "type": "boolean",
+        "title": "GDPR Consent"
+      },
+      {
+        "readOnly": true,
+        "name": "muslimInVaasa",
+        "type": "boolean",
+        "title": "Muslim living in Vaasa"
+      }
+    ],
+    "name": "membersList",
+    "type": "document"
   }
 ]

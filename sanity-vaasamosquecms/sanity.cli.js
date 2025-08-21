@@ -4,5 +4,6 @@ export default defineCliConfig({
   api: {
     projectId: '2lmbvnig',
     dataset: 'production'
-  }
+  },
+  studioHost: 'vis-media'
 }) 

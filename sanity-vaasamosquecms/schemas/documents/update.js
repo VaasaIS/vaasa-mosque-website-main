@@ -26,7 +26,7 @@ export default {
       name: 'duration',
       title: 'Duration',
       type: 'string',
-      description: 'Duration in format MM:SS (e.g., 10:24)',
+      description: 'Duration in format MM:SS (e.g., 10:24) or just minutes (e.g., 10)',
       validation: (Rule) => Rule.required(),
     },
     {

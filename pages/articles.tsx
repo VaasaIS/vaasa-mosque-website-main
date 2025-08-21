@@ -148,6 +148,19 @@ const Articles = ({ articles, updates }: Props) => {
                 }
               }
 
+              const formatDuration = (duration: string) => {
+                // If duration is just a number (like "10"), convert to "10:00"
+                if (/^\d+$/.test(duration)) {
+                  return `${duration}:00`
+                }
+                // If it's already in MM:SS format, return as is
+                if (/^\d+:\d{2}$/.test(duration)) {
+                  return duration
+                }
+                // Default fallback
+                return duration
+              }
+
               return (
                 <li
                   key={update._id}
@@ -157,7 +170,7 @@ const Articles = ({ articles, updates }: Props) => {
                   {update.title}
                   <span className="font-sm ml-2 flex items-center text-xs md:text-base">
                     {getIcon(update.type)}
-                    {update.duration}
+                    {formatDuration(update.duration)}
                   </span>
                 </li>
               )
